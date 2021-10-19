@@ -16,6 +16,5 @@ export function getDate() {
 
 export function getDay() {
     let day = moment().day();
-    console.log(day);
     return DAYS_OF_WEEK[day];
 }

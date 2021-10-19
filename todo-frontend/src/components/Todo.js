@@ -1,10 +1,12 @@
-export default function Todo({ todo }) {
+import { Checkbox, Typography } from 'antd';
+const { Text } = Typography;
+
+export default function Todo({ todo, onChange }) {
     return (
         <div className="todo">
-            <input id={`todo-${todo.id}`} type="checkbox" />
-            <label className="todo-label" htmlFor={`todo-${todo.id}`}>
-                {todo.task}
-            </label>
+            <Checkbox onChange={(e) => onChange(todo)}>
+                <Text strong>{todo.task}</Text>
+            </Checkbox>
         </div>
     );
 }
